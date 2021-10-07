@@ -1,7 +1,13 @@
+import { ItemListContainer } from './components/ItemListContainer/ItemListContainer.js';
 import { NavBar } from './components/NavBar/NavBar';
 
 function App() {
-  return <NavBar />;
+  return (
+    <>
+      <NavBar />
+      <ItemListContainer />
+    </>
+  );
 }
 
 export default App;
