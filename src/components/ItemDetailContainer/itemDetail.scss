@@ -1,0 +1,14 @@
+.itemDetail {
+  display: flex;
+  flex-direction: row;
+  padding: 2rem;
+  &__img {
+    height: 400px;
+  }
+  &__container {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+  }
+}

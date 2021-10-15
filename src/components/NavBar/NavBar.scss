@@ -1,5 +1,6 @@
 @media (min-width: 600px) {
   header {
+    height: 100px;
     max-width: 1200px;
     width: 80%;
     margin: 0 auto;
@@ -7,11 +8,26 @@
     justify-content: space-between;
     align-items: center;
   }
-
-  .nav__links {
-    // background-color: red;
-    display: flex;
-    min-width: 300px;
-    justify-content: space-between;
+  .brand {
+    font-size: 2.5rem;
+    text-decoration: none;
+    color: black;
+  }
+  .nav {
+    &__links {
+      display: flex;
+      min-width: 600px;
+      justify-content: space-between;
+      font-weight: 700;
+    }
+    &__link {
+      color: black;
+      font-size: 1.5rem;
+      text-decoration: none;
+    }
+    &__cart {
+      color: black;
+      font-size: 2rem;
+    }
   }
 }
