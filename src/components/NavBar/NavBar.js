@@ -1,8 +1,14 @@
 import React from 'react';
+import { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { CartContext } from '../../context/CartContext';
 import './NavBar.scss';
 
 export const NavBar = () => {
+  
+  const {amauntInCart, cart}=useContext(CartContext)
+  
+
   return (
     <header>
       <Link to="/" className="brand">
@@ -21,15 +27,24 @@ export const NavBar = () => {
         >
           Alfajores
         </Link>
-        <Link to="/about" className="nav__link">
+        {/* <Link to="/about" className="nav__link">
           Sobre Nosotros
-        </Link>
+        </Link> */}
         <Link to="/contact" className="nav__link">
           Contacto
         </Link>
-        <Link to="/cart">
+
+        {
+          cart.length === 0 
+          ? <></>
+          :
+        <Link className="cartContainer" to="/cart">
           <i className="fas fa-shopping-cart nav__cart"></i>
+          <span className="cartCount">{amauntInCart()}</span>
         </Link>
+        }
+
+
       </nav>
     </header>
   );

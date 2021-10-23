@@ -12,6 +12,7 @@ export const stock = [
     description:
       'Base húmeda de brownie con nueces, dulce de leche repostero, crema chantilly y frutos rojos (arándanos, moras y frambuesas)',
     category: 'tortas',
+    stock: 20,
   },
   {
     id: 2,
@@ -20,6 +21,7 @@ export const stock = [
     img: torta_2,
     description: 'Chocotorta',
     category: 'tortas',
+    stock: 20,
   },
   {
     id: 3,
@@ -29,6 +31,7 @@ export const stock = [
     description:
       'Tapas de alfajor estilo marplatense, relleno de ganache de choco blanco y pistacho, baño de choco blanco y garrapiñadas de pistacho',
     category: 'alfajores',
+    stock: 20,
   },
   {
     id: 4,
@@ -38,5 +41,6 @@ export const stock = [
     description:
       'Clásico de dulce de leche repostero y chocolate. Pistacho y chocolate blanco. Frambuesa y Chocolate. Maní y chocolate. Coco y chocolate blanco',
     category: 'alfajores',
+    stock: 20,
   },
 ];

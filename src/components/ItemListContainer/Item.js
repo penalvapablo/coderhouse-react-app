@@ -11,8 +11,7 @@ export const Item = ({
   return (
     <div className="item">
       <h2 className="item__title">{name}</h2>
-      <p className="item__price">{price}</p>
-      <p className="">{category}</p>
+      <p className="item__price">${price}</p>
       <img
         src={img}
         alt={name}
@@ -22,7 +21,7 @@ export const Item = ({
         to={`/detail/${id}`}
         className="item__btn"
       >
-        Quiero
+        Comprar
       </Link>
     </div>
   );

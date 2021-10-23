@@ -1,12 +1,13 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import { useParams } from 'react-router';
+import { UIContext } from '../../context/UIContext';
 import { pedirProductos } from '../../helpers/pedirProductos';
 import { ItemList } from './ItemList';
 import './itemListContainer.scss';
 
 export const ItemListContainer = () => {
   const [items, setItems] = useState([]);
-  const [loading, setLoading] = useState(false);
+  const { loading, setLoading } = useContext(UIContext)
 
   const { categoryId } = useParams();
 
@@ -25,11 +26,11 @@ export const ItemListContainer = () => {
       .finally(() => {
         setLoading(false);
       });
-  }, [categoryId]);
+  }, [categoryId, setLoading]);
 
   return (
     <section>
-      {loading ? <h2>Cargando...</h2> : <ItemList productos={items} />}
+      {loading ? <h2 className="cargando">Cargando...</h2> : <ItemList productos={items} />}
     </section>
   );
 };

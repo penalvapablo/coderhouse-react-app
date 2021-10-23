@@ -1,7 +1,10 @@
 import React, {
   useState,
   useEffect,
+  useContext
 } from 'react';
+import { UIContext } from '../../context/UIContext';
+
 import { useParams } from 'react-router';
 import { pedirProductos } from '../../helpers/pedirProductos';
 import { ItemDetail } from './ItemDetail';
@@ -9,7 +12,7 @@ import './itemDetail.scss';
 
 export const ItemDetailContainer = () => {
   const [item, setItem] = useState(null);
-  const [loading, setLoading] = useState(false);
+  const { loading, setLoading } = useContext(UIContext)
   const { itemId } = useParams();
 
   useEffect(() => {
@@ -27,12 +30,12 @@ export const ItemDetailContainer = () => {
       .finally(() => {
         setLoading(false);
       });
-  }, [itemId]);
+  }, [itemId,setLoading]);
 
   return (
     <div>
       {loading ? (
-        <h2>Cargando...</h2>
+        <h2 className="cargando">Cargando...</h2>
       ) : (
         <ItemDetail {...item} />
       )}
