@@ -5,9 +5,7 @@ import { CartContext } from '../../context/CartContext';
 import './NavBar.scss';
 
 export const NavBar = () => {
-  
-  const {amauntInCart, cart}=useContext(CartContext)
-  
+  const { amauntInCart, cart } = useContext(CartContext);
 
   return (
     <header>
@@ -15,10 +13,7 @@ export const NavBar = () => {
         CakeHouse
       </Link>
       <nav className="nav__links">
-        <Link
-          to="/products/tortas"
-          className="nav__link"
-        >
+        <Link to="/products/tortas" className="nav__link">
           Tortas
         </Link>
         <Link
@@ -34,17 +29,34 @@ export const NavBar = () => {
           Contacto
         </Link>
 
-        {
-          cart.length === 0 
-          ? <></>
-          :
-        <Link className="cartContainer" to="/cart">
+        <Link
+          style={{
+            visibility:
+              cart.length === 0 ? 'hidden' : 'visible',
+          }}
+          className="cartContainer"
+          to="/cart"
+        >
           <i className="fas fa-shopping-cart nav__cart"></i>
-          <span className="cartCount">{amauntInCart()}</span>
+          <span className="cartCount">
+            {amauntInCart()}
+          </span>
         </Link>
-        }
 
-
+        {/* {cart.length === 0 ? (
+          <></>
+        ) : (
+          <Link
+            style={{ visibility: 'hidden' }}
+            className="cartContainer"
+            to="/cart"
+          >
+            <i className="fas fa-shopping-cart nav__cart"></i>
+            <span className="cartCount">
+              {amauntInCart()}
+            </span>
+          </Link>
+        )} */}
       </nav>
     </header>
   );

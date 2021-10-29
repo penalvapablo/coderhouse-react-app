@@ -1,36 +1,39 @@
 import React, {
   useState,
   useEffect,
-  useContext
+  useContext,
 } from 'react';
 import { UIContext } from '../../context/UIContext';
 
 import { useParams } from 'react-router';
-import { pedirProductos } from '../../helpers/pedirProductos';
 import { ItemDetail } from './ItemDetail';
 import './itemDetail.scss';
+import { getFirestore } from '../../firebase/config';
 
 export const ItemDetailContainer = () => {
   const [item, setItem] = useState(null);
-  const { loading, setLoading } = useContext(UIContext)
+  const { loading, setLoading } = useContext(UIContext);
   const { itemId } = useParams();
 
   useEffect(() => {
     setLoading(true);
 
-    pedirProductos()
-      .then((res) => {
-        setItem(
-          res.find(
-            (prod) => prod.id === Number(itemId)
-          )
-        );
+    const db = getFirestore();
+    const productos = db.collection('productos');
+    const item = productos.doc(itemId);
+    item
+      .get()
+      .then((doc) => {
+        setItem({
+          id: doc.id,
+          ...doc.data(),
+        });
       })
       .catch((err) => console.log(err))
       .finally(() => {
         setLoading(false);
       });
-  }, [itemId,setLoading]);
+  }, [itemId, setLoading]);
 
   return (
     <div>
