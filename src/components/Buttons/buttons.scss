@@ -1,0 +1,29 @@
+.button {
+  margin: 1.5rem auto;
+  padding: 0.4rem;
+  border: 1px solid black;
+  border-radius: 10px;
+  text-transform: uppercase;
+  background-color: transparent;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: 0.5s;
+  cursor: pointer;
+  width: fit-content;
+
+  &__green {
+    background-color: rgb(111, 199, 111);
+    &:hover {
+      background-color: rgb(154, 207, 154);
+    }
+  }
+  &__red {
+    background-color: rgb(231, 116, 116);
+    &:hover {
+      background-color: rgb(231, 152, 152);
+    }
+  }
+}
+.volver {
+  margin-top: 0;
+}

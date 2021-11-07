@@ -10,6 +10,7 @@ import { ItemDetailContainer } from './components/ItemDetailContainer/ItemDetail
 import { CartProvider } from './context/CartContext.js';
 import { CartScreen } from './components/CartScreen/CartScreen.js';
 import { UIProvider } from './context/UIContext.js';
+import { Checkout } from './components/Checkout/Checkout.js';
 
 function App() {
   return (
@@ -32,11 +33,14 @@ function App() {
               <Route exact path="/about">
                 <h1>About</h1>
               </Route>
-              <Route exact path="/contact">
-                <h1>Contact</h1>
-              </Route>
+              {/* <Route exact path="/contact">
+                <LoaderView />
+              </Route> */}
               <Route exact path="/cart">
                 <CartScreen />
+              </Route>
+              <Route exact path="/checkout">
+                <Checkout />
               </Route>
               <Route path="*">
                 <Redirect to="/" />

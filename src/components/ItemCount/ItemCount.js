@@ -1,4 +1,5 @@
 import React from 'react';
+import './ItemCount.scss';
 
 export const ItemCount = ({
   cantidad,
@@ -13,10 +14,20 @@ export const ItemCount = ({
   };
 
   return (
-    <div>
-      <button onClick={handleSubtract}>-</button>
-      <span>{cantidad}</span>
-      <button onClick={handleAdd}>+</button>
+    <div className="itemCount">
+      <button
+        className="itemCount__handle"
+        onClick={handleSubtract}
+      >
+        -
+      </button>
+      <span className="itemCount__number">{cantidad}</span>
+      <button
+        className="itemCount__handle"
+        onClick={handleAdd}
+      >
+        +
+      </button>
     </div>
   );
 };

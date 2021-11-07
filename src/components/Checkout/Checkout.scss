@@ -1,0 +1,14 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  &__input {
+    font-size: 1.2rem;
+  }
+}

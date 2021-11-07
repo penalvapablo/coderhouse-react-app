@@ -6,6 +6,7 @@ import React, {
 import { useParams } from 'react-router';
 import { UIContext } from '../../context/UIContext';
 import { getFirestore } from '../../firebase/config';
+import { LoaderView } from '../Loader/Loader';
 import { ItemList } from './ItemList';
 import './itemListContainer.scss';
 
@@ -17,7 +18,6 @@ export const ItemListContainer = () => {
 
   useEffect(() => {
     setLoading(true);
-
     const db = getFirestore();
     const productos = categoryId
       ? db
@@ -40,24 +40,10 @@ export const ItemListContainer = () => {
   return (
     <section>
       {loading ? (
-        <h2 className="cargando">Cargando...</h2>
+        <LoaderView />
       ) : (
         <ItemList productos={items} />
       )}
     </section>
   );
 };
-// setLoading(true);
-
-// pedirProductos()
-//   .then((res) => {
-//     if (categoryId) {
-//       setItems(res.filter((prod) => prod.category === categoryId));
-//     } else {
-//       setItems(res);
-//     }
-//   })
-//   .catch((err) => console.log(err))
-//   .finally(() => {
-//     setLoading(false);
-//   });

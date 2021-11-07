@@ -4,11 +4,11 @@ import React, {
   useContext,
 } from 'react';
 import { UIContext } from '../../context/UIContext';
-
 import { useParams } from 'react-router';
 import { ItemDetail } from './ItemDetail';
 import './itemDetail.scss';
 import { getFirestore } from '../../firebase/config';
+import { LoaderView } from '../Loader/Loader';
 
 export const ItemDetailContainer = () => {
   const [item, setItem] = useState(null);
@@ -37,11 +37,7 @@ export const ItemDetailContainer = () => {
 
   return (
     <div>
-      {loading ? (
-        <h2 className="cargando">Cargando...</h2>
-      ) : (
-        <ItemDetail {...item} />
-      )}
+      {loading ? <LoaderView /> : <ItemDetail {...item} />}
     </div>
   );
 };

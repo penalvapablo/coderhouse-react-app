@@ -1,0 +1,18 @@
+.itemCount {
+  display: flex;
+  width: 100px;
+  margin: 0 auto;
+  justify-content: space-between;
+  &__handle {
+    background-color: transparent;
+    border-radius: 5px;
+    font-size: 1.5rem;
+    height: 2rem;
+    width: 2rem;
+    cursor: pointer;
+  }
+  &__number {
+    font-size: 1.5rem;
+    transition: ease;
+  }
+}

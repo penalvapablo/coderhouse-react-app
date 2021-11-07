@@ -25,9 +25,9 @@ export const NavBar = () => {
         {/* <Link to="/about" className="nav__link">
           Sobre Nosotros
         </Link> */}
-        <Link to="/contact" className="nav__link">
+        {/* <Link to="/contact" className="nav__link">
           Contacto
-        </Link>
+        </Link> */}
 
         <Link
           style={{
