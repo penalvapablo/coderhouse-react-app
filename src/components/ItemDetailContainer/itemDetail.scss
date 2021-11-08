@@ -64,3 +64,9 @@
     }
   }
 }
+.noProduct {
+  display: block;
+  text-align: center;
+  &__title {
+  }
+}

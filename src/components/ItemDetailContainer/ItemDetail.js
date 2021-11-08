@@ -3,7 +3,7 @@ import { useContext } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import { CartContext } from '../../context/CartContext';
 import { ItemCount } from '../ItemCount/ItemCount';
-
+import { ProductDoesntExist } from './ProductDoesntExist';
 export const ItemDetail = ({
   name,
   price,
@@ -26,6 +26,7 @@ export const ItemDetail = ({
       price,
       category,
       cantidad,
+      stock,
     };
     if (cantidad > 0) {
       addToCart(newItem);
@@ -36,12 +37,7 @@ export const ItemDetail = ({
     <>
       {name === undefined ? (
         <>
-          <h1 className="noProduct">
-            Este producto no existe
-          </h1>
-          <Link to="/" className="noProduct___btn">
-            Volver a inicio
-          </Link>
+          <ProductDoesntExist />
         </>
       ) : (
         <div className="item itemDetail">

@@ -6,15 +6,17 @@
   text-transform: uppercase;
   background-color: transparent;
   font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 2px;
   text-decoration: none;
   transition: 0.5s;
   cursor: pointer;
   width: fit-content;
 
   &__green {
-    background-color: rgb(111, 199, 111);
+    background-color: rgb(144, 207, 144);
     &:hover {
-      background-color: rgb(154, 207, 154);
+      background-color: rgb(185, 230, 185);
     }
   }
   &__red {

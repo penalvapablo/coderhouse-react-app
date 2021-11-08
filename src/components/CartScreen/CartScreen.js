@@ -28,6 +28,7 @@ export const CartScreen = () => {
               <p className="prod__precio">
                 Precio: ${prod.cantidad * prod.price}
               </p>
+
               <button
                 className="button button__red"
                 onClick={() => removeItem(prod.id)}

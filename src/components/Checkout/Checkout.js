@@ -9,7 +9,7 @@ import './Checkout.scss';
 
 export const Checkout = () => {
   const { loading, setLoading } = useContext(UIContext);
-  const { cart, finalPrice, clearCart } =
+  const { cart, finalPrice, clearCart, removeItem } =
     useContext(CartContext);
   const [mailConfirmation, setMailConfirmation] =
     useState('');
@@ -86,66 +86,89 @@ export const Checkout = () => {
       {cart.length === 0 && <Redirect to="/" />}
 
       {loading && <LoaderView />}
-      <div className="form__container">
-        <h2 className="form__title">
-          Complete con sus datos
-        </h2>
-        <form className="form" onSubmit={handleSubmit}>
-          <input
-            className="form__input"
-            type="text"
-            placeholder="Nombre"
-            name="nombre"
-            value={values.nombre}
-            onChange={handleImputChange}
-          />
-          <br />
+      <div className="checkout">
+        <h2 className="cart__title">Resumen de compra</h2>
+        {cart.map((prod) => (
+          <div className="prod">
+            <h3 className="prod__name">{prod.name}</h3>
+            <p className="prod__cantidad">
+              Cantidad: {prod.cantidad}
+            </p>
+            <p className="prod__precio">
+              Precio: ${prod.cantidad * prod.price}
+            </p>
+            <button
+              className="button button__red"
+              onClick={() => removeItem(prod.id)}
+            >
+              Remover del carrito
+            </button>
+          </div>
+        ))}
+        <h3 className="cart__price">
+          Precio Total: ${finalPrice()}
+        </h3>
+        <div className="form__container">
+          <h2 className="form__title">
+            Complete con sus datos
+          </h2>
+          <form className="form" onSubmit={handleSubmit}>
+            <input
+              className="form__input"
+              type="text"
+              placeholder="Nombre"
+              name="nombre"
+              value={values.nombre}
+              onChange={handleImputChange}
+            />
+            <br />
 
-          <input
-            className="form__input"
-            type="text"
-            placeholder="Apellido"
-            name="apellido"
-            value={values.apellido}
-            onChange={handleImputChange}
-          />
-          <br />
+            <input
+              className="form__input"
+              type="text"
+              placeholder="Apellido"
+              name="apellido"
+              value={values.apellido}
+              onChange={handleImputChange}
+            />
+            <br />
 
-          <input
-            className="form__input"
-            type="mail"
-            placeholder="E-mail"
-            name="mail"
-            value={values.mail}
-            onChange={handleImputChange}
-          />
-          <br />
-          <input
-            className="form__input"
-            type="mail"
-            placeholder="Repetí tu E-mail"
-            name="mail2"
-            onChange={handleMailValidation}
-          />
-          <br />
+            <input
+              className="form__input"
+              type="mail"
+              placeholder="E-mail"
+              name="mail"
+              value={values.mail}
+              onChange={handleImputChange}
+            />
+            <br />
+            <input
+              className="form__input"
+              type="mail"
+              placeholder="Repetí tu E-mail"
+              name="mail2"
+              onChange={handleMailValidation}
+            />
+            <br />
 
-          <input
-            className="form__input"
-            type="tel"
-            placeholder="Teléfono"
-            name="tel"
-            value={values.tel}
-            onChange={handleImputChange}
-          />
-          <br />
-          <button
-            className="button button__green"
-            type="submit"
-            disabled={loading}
-          >
-            Finalizar
-          </button>
-        </form>
+            <input
+              className="form__input"
+              type="tel"
+              placeholder="Teléfono"
+              name="tel"
+              value={values.tel}
+              onChange={handleImputChange}
+            />
+            <br />
+            <button
+              className="button button__green"
+              type="submit"
+              disabled={loading}
+            >
+              Finalizar
+            </button>
+          </form>
+        </div>
       </div>
     </>
   );
