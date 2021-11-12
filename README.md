@@ -16,3 +16,8 @@ npm install
 ```bash
 npm start
 ```
+
+## Video de la navegación de la aplicación
+https://www.awesomescreenshot.com/video/5997319?key=09878bb534032d6bfe86c7e62cc11b40
+
+
