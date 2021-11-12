@@ -7,20 +7,22 @@
   background-color: transparent;
   font-size: 1rem;
   font-weight: 600;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
   text-decoration: none;
   transition: 0.5s;
   cursor: pointer;
   width: fit-content;
 
   &__green {
-    background-color: rgb(144, 207, 144);
+    background-color: rgb(43, 126, 43);
+    color: rgb(246, 243, 238);
     &:hover {
-      background-color: rgb(185, 230, 185);
+      background-color: rgb(66, 202, 66);
     }
   }
   &__red {
-    background-color: rgb(231, 116, 116);
+    background-color: rgb(204, 59, 59);
+    color: rgb(246, 243, 238);
     &:hover {
       background-color: rgb(231, 152, 152);
     }

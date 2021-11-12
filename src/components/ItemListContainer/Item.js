@@ -5,7 +5,6 @@ export const Item = ({
   name,
   price,
   img,
-  category,
   id,
 }) => {
   return (

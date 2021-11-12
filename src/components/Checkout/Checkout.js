@@ -9,10 +9,13 @@ import './Checkout.scss';
 
 export const Checkout = () => {
   const { loading, setLoading } = useContext(UIContext);
+
   const { cart, finalPrice, clearCart, removeItem } =
     useContext(CartContext);
+
   const [mailConfirmation, setMailConfirmation] =
     useState('');
+
   const [values, setValues] = useState({
     nombre: '',
     apellido: '',
@@ -31,6 +34,7 @@ export const Checkout = () => {
     setMailConfirmation(e.target.value);
   };
 
+  
   const handleSubmit = (e) => {
     e.preventDefault();
     if (values.nombre.length < 3) {

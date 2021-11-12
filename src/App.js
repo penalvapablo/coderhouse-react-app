@@ -30,12 +30,7 @@ function App() {
               <Route exact path="/detail/:itemId">
                 <ItemDetailContainer />
               </Route>
-              <Route exact path="/about">
-                <h1>About</h1>
-              </Route>
-              {/* <Route exact path="/contact">
-                <LoaderView />
-              </Route> */}
+
               <Route exact path="/cart">
                 <CartScreen />
               </Route>
