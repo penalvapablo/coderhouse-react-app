@@ -1,13 +1,13 @@
-# Proyecto Final Coderhouse - React js
+# Coderhouse Final Project - React js
 
-## Descripcion
+## Description
 
-Proyecto final del curso de React.js.
-E-commerce. En la página principal se encuentra el catálogo completo de productos. En la barra de navegación se encuentran los links de las categorías de los productos. Se puede ver el detalle de cada producto y asignar la cantidad que se desea comprar. Una vez seleccionado algun producto, se puede acceder al carrito para confirmar los productos seleccionados. Luego, para finalizar la compra, se completa el formulario con los datos del usuario
+Final project of the React.js course.
+E-commerce. On the main page you will find the complete catalog of products. In the navigation bar you will find the links of the product categories. You can see the detail of each product and assign the amount you want to buy. Once a product has been selected, you can access the cart to confirm the selected products. Then, to finalize the purchase, the form is completed with the user's data
 
-## Aplicacion
+## Try it
 
-Para probar la aplicación, descargar el codigo y ejecutar los siguientes comandos en consola:
+To test the application, download the code and execute the following commands in the console:
 
 ```bash
 npm install
@@ -17,7 +17,7 @@ npm install
 npm start
 ```
 
-## Video de la navegación de la aplicación
+## Demo
 https://www.awesomescreenshot.com/video/5997319?key=09878bb534032d6bfe86c7e62cc11b40
 
 
